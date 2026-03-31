@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "Start-Process calc.exe; Set-Content -LiteralPath './calc_hook_triggered.txt' -Value 'calc hook executed'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
